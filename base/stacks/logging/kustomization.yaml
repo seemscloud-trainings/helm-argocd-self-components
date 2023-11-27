@@ -6,3 +6,4 @@ namespace: logging-system
 resources:
   - elasticsearch.yaml
   - kibana.yaml
+  - logstash.yaml
