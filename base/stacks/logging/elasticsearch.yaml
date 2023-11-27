@@ -14,8 +14,6 @@ spec:
       count: 2
       podTemplate:
         spec:
-          automountServiceAccountToken: true
-          serviceAccountName: eck-aio
           volumes:
             - name: elasticsearch-data
               emptyDir: { }
