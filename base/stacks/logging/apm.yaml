@@ -8,6 +8,7 @@ spec:
   count: 1
   kibanaRef:
     name: sc
+    namespace: logging-system
   config:
     output.kafka:
       hosts: [ "redpanda:9093" ]
