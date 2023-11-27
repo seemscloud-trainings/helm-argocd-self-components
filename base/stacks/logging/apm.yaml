@@ -7,8 +7,6 @@ spec:
   count: 1
   kibanaRef:
     name: sc
-  elasticsearchRef:
-    name: sc
   config:
     output.kafka:
       hosts: [ "redpanda:9093" ]
