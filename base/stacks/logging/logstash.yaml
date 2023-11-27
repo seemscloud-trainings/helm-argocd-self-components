@@ -36,7 +36,7 @@ spec:
             if [kubernetes][namespace_name] {
               mutate { 
                 add_field => { 
-                  "[data_stream][namespace]" => "${[kubernetes][namespace_name]}"
+                  "[data_stream][namespace]" => "%{[kubernetes][namespace_name]}"
                 }
               }
             }
