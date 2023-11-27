@@ -1,0 +1,21 @@
+apiVersion: apm.k8s.elastic.co/v1
+kind: ApmServer
+metadata:
+  name: apm-server-quickstart
+  namespace: default
+spec:
+  version: 8.11.1
+  count: 1
+  config:
+    output.kafka:
+      hosts: [ "redpanda:9093" ]
+      topic: 'apm'
+      partition.round_robin:
+        reachable_only: false
+      required_acks: 1
+      compression: gzip
+      max_message_bytes: 10485760
+  http:
+    service:
+      spec:
+        type: LoadBalancer

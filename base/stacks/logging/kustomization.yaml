@@ -7,3 +7,4 @@ resources:
   - elasticsearch.yaml
   - kibana.yaml
   - logstash.yaml
+  - apm.yaml
