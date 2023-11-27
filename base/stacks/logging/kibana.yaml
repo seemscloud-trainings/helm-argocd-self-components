@@ -12,6 +12,7 @@ spec:
         ports:
           - port: 8443
             name: https
+            targetPort: 5601
   elasticsearchRef:
     name: sc
     namespace: logging-system
