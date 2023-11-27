@@ -7,8 +7,9 @@ spec:
   version: 8.11.1
   count: 1
   kibanaRef:
-    name: sc
-    namespace: logging-system
+    secretName: sc-kibana-user
+  elasticsearchRef:
+    secretName: sc-es-elastic-user
   config:
     output.kafka:
       hosts: [ "redpanda:9093" ]
