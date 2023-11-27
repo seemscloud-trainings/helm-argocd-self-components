@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sc-ls-config
+stringData:
+  logstash.yml: |-
+    pipeline.workers: 4
+---
+apiVersion: logstash.k8s.elastic.co/v1alpha1
+kind: Logstash
+metadata:
+  name: sc
+spec:
+  count: 1
+  elasticsearchRefs:
+    - name: sc
+      clusterName: sc
+  version: 8.11.1
+  configRef:
+    secretName: sc-ls-config
+  pipelines:
+    - pipeline.id: main
+      config.string: |
+        input {
+          kafka {
+            consumer_threads => 1
+            bootstrap_servers => "redpanda:9093"
+            topics => [ "logs" ]
+            codec => "json"
+            group_id => "logstash"
+            decorate_events => "extended"
+          }
+        }
+        filter {
+          if [@metadata][kafka][topic] == "logs" {
+            if [kubernetes][namespace_name] {
+              mutate { 
+                add_field => { 
+                  "[data_stream][namespace]" => "${[kubernetes][namespace_name]}"
+                }
+              }
+            }
+          }
+        }
+        output {
+          elasticsearch {
+            hosts => [ "${QS_ES_HOSTS}" ]
+            user => "${QS_ES_USER}"
+            password => "${QS_ES_PASSWORD}"
+            ssl_certificate_authorities => "${QS_ES_SSL_CERTIFICATE_AUTHORITY}"
+          }
+        }
