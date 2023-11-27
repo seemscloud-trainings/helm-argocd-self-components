@@ -10,7 +10,7 @@ spec:
       spec:
         type: LoadBalancer
         ports:
-          - port: 8443
+          - port: 5601
             name: https
   elasticsearchRef:
     name: sc
