@@ -7,5 +7,5 @@ spec:
   version: 8.11.1
   count: 1
   elasticsearchRef:
-    name: eck
+    name: logging
     namespace: logging-system
