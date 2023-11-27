@@ -11,7 +11,7 @@ stringData:
         reload:
             automatic: true
     pipeline:
-        workers: 4
+        workers: 8
 ---
 apiVersion: logstash.k8s.elastic.co/v1alpha1
 kind: Logstash
@@ -36,6 +36,7 @@ spec:
             codec => "json"
             group_id => "logstash"
             decorate_events => "extended"
+            consumer_threads => 8
           }
         }
         filter {
