@@ -10,6 +10,9 @@ spec:
     service:
       spec:
         type: LoadBalancer
+        ports:
+          - port: 8443
+            name: https
   elasticsearchRef:
     name: logging
     namespace: logging-system
