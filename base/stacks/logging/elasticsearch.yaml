@@ -7,7 +7,7 @@ spec:
   version: 8.11.1
   updateStrategy:
     changeBudget:
-      maxSurge: 3
+      maxSurge: 1
       maxUnavailable: 3
   http:
     service:
