@@ -4,7 +4,14 @@ metadata:
   name: sc-ls-config
 stringData:
   logstash.yml: |-
-    pipeline.workers: 4
+    api:
+      http:
+        host: 0.0.0.0
+    config:
+      reload:
+        automatic: true
+    pipeline:
+      workers: 4
 ---
 apiVersion: logstash.k8s.elastic.co/v1alpha1
 kind: Logstash
