@@ -8,6 +8,11 @@ spec:
   nodeSets:
     - name: aio
       count: 3
+      podTemplate:
+        spec:
+          volumes:
+            - name: elasticsearch-data
+              emptyDir: { }
       config:
         node.roles: [ "master", "data", "ingest" ]
         xpack.ml.enabled: false
