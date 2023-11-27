@@ -6,6 +6,10 @@ metadata:
 spec:
   version: 8.11.1
   count: 1
+  http:
+    service:
+      spec:
+        type: LoadBalancer
   elasticsearchRef:
     name: logging
     namespace: logging-system
