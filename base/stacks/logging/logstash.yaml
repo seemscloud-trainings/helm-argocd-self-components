@@ -30,13 +30,12 @@ spec:
       config.string: |
         input {
           kafka {
-            consumer_threads => 1
+            consumer_threads => 8
             bootstrap_servers => "redpanda:9093"
             topics => [ "logs" ]
             codec => "json"
             group_id => "logstash"
             decorate_events => "extended"
-            consumer_threads => "8"
           }
         }
         filter {
