@@ -5,6 +5,10 @@ metadata:
   namespace: logging-system
 spec:
   version: 8.11.1
+  updateStrategy:
+    changeBudget:
+      maxSurge: 3
+      maxUnavailable: 3
   http:
     service:
       spec:
