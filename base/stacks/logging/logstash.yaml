@@ -5,13 +5,13 @@ metadata:
 stringData:
   logstash.yml: |-
     api:
-      http:
-        host: 0.0.0.0
+        http:
+            host: 0.0.0.0
     config:
-      reload:
-        automatic: true
+        reload:
+            automatic: true
     pipeline:
-      workers: 4
+        workers: 4
 ---
 apiVersion: logstash.k8s.elastic.co/v1alpha1
 kind: Logstash
