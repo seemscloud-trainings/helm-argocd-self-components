@@ -20,5 +20,5 @@ spec:
           - name: SERVER_TYPE
             value: uvicorn
           - name: SERVER_PORT
-            value: 8080
+            value: "8080"
         image: seemscloud/fastapi:1.4.35
