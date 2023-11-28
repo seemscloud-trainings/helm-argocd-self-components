@@ -8,6 +8,9 @@ spec:
   kibanaRef:
     name: sc
   config:
+    apm-server:
+      kibana:
+        enabled: false
     output:
       elasticsearch:
         enabled: false
