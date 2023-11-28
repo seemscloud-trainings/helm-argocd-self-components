@@ -7,27 +7,27 @@ spec:
   count: 1
   config:
     apm-server:
-      auth:
-        anonymous:
-          enabled: true
-      host: :8200
+      data_streams:
+        enabled: false
+        wait_for_integration: false
       kibana:
         enabled: false
       ssl:
         enabled: false
+      auth:
+        anonymous:
+          enabled: true
     output:
       elasticsearch:
         enabled: false
       kafka:
-        compression: gzip
-        hosts:
-          - redpanda:9093
-        max_message_bytes: 1.048576e+07
-        partition:
-          round_robin:
-            reachable_only: false
+        hosts: [ "redpanda:9093" ]
+        topic: 'apm'
+        partition.round_robin:
+          reachable_only: false
         required_acks: 1
-        topic: apm
+        compression: gzip
+        max_message_bytes: 10485760
   http:
     service:
       spec:
