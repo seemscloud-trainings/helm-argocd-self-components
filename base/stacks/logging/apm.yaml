@@ -11,6 +11,7 @@ spec:
     apm-server:
       data_streams:
         enabled: false
+        wait_for_integration: false
       kibana:
         enabled: false
       ssl:
