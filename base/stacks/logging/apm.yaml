@@ -9,10 +9,9 @@ spec:
     name: sc
   config:
     apm-server:
-      kibana:
-        enabled: false
-      ssl:
-        enabled: false
+      data_streams.enabled: true
+      kibana.enabled: false
+      ssl.enabled: false
       auth:
         anonymous:
           enabled: true
