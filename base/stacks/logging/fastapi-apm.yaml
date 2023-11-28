@@ -15,10 +15,12 @@ spec:
         app: fastapi
     spec:
       containers:
-      - name: fastapi
-        env:
-          - name: SERVER_TYPE
-            value: uvicorn
-          - name: SERVER_PORT
-            value: "8080"
-        image: seemscloud/fastapi:1.4.35
+        - name: fastapi
+          env:
+            - name: SERVER_TYPE
+              value: "uvicorn"
+            - name: SERVER_PORT
+              value: "8080"
+            - name: APM_SERVER
+              value: "sc-apm-http:8200"
+          image: seemscloud/fastapi:1.4.35
