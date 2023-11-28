@@ -5,15 +5,19 @@ metadata:
 spec:
   version: 8.11.1
   count: 1
+  elasticsearchRef:
+    name: sc
   config:
-    output.kafka:
-      hosts: [ "redpanda:9093" ]
-      topic: 'apm'
-      partition.round_robin:
-        reachable_only: false
-      required_acks: 1
-      compression: gzip
-      max_message_bytes: 10485760
+    output:
+      elasticsearch: { }
+      kafka:
+        hosts: [ "redpanda:9093" ]
+        topic: 'apm'
+        partition.round_robin:
+          reachable_only: false
+        required_acks: 1
+        compression: gzip
+        max_message_bytes: 10485760
   http:
     service:
       spec:
