@@ -7,6 +7,7 @@ spec:
   count: 1
   config:
     apm-server:
+      host: "0.0.0.0:8200"
       data_streams:
         enabled: false
         wait_for_integration: false
