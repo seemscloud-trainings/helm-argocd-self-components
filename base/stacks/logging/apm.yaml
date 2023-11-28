@@ -5,7 +5,7 @@ metadata:
 spec:
   version: 8.11.1
   count: 1
-  elasticsearchRef:
+  kibanaRef:
     name: sc
   config:
     output:
