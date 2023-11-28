@@ -5,6 +5,8 @@ metadata:
 spec:
   version: 8.11.1
   count: 1
+  kibanaRef:
+    name: sc
   config:
     apm-server:
       host: "0.0.0.0:8200"
@@ -12,7 +14,7 @@ spec:
         enabled: false
         wait_for_integration: false
       kibana:
-        enabled: false
+        enabled: true
       ssl:
         enabled: false
       auth:
