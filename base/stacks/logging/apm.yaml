@@ -10,8 +10,8 @@ spec:
   config:
     apm-server:
       auth:
-        api_key:
-          enabled: false
+        anonymous:
+          enabled: true
     output:
       elasticsearch:
         enabled: false
