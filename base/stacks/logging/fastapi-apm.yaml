@@ -16,4 +16,7 @@ spec:
     spec:
       containers:
       - name: fastapi
+        env:
+          - name: SERVER_TYPE
+            value: uvicorn
         image: seemscloud/fastapi:1.4.35
