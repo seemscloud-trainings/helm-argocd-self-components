@@ -10,7 +10,7 @@ spec:
   config:
     output:
       elasticsearch:
-        enabled: true
+        enabled: false
       kafka:
         hosts: [ "redpanda:9093" ]
         topic: 'apm'
