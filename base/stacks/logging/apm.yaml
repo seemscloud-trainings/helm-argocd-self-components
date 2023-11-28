@@ -9,6 +9,8 @@ spec:
     name: sc
   config:
     output:
+      elasticsearch:
+        enabled: true
       kafka:
         hosts: [ "redpanda:9093" ]
         topic: 'apm'
