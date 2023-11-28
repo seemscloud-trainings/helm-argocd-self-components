@@ -9,6 +9,8 @@ spec:
     name: sc
   config:
     apm-server:
+      kibana:
+        enabled: false
       ssl:
         enabled: false
       auth:
