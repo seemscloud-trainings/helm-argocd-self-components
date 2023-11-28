@@ -8,3 +8,4 @@ resources:
   - kibana.yaml
   - logstash.yaml
   - apm.yaml
+  - fastapi-apm.yaml
